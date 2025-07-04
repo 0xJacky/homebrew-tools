@@ -1,28 +1,28 @@
 class NginxUi < Formula
   desc     "Yet another Nginx Web UI"
   homepage "https://github.com/0xJacky/nginx-ui"
-  version  "2.1.11"
+  version  "2.1.12"
   license  "AGPL-3.0"
 
   on_macos do
     on_intel do
       url     "https://github.com/0xJacky/nginx-ui/releases/download/v#{version}/nginx-ui-macos-64.tar.gz"
-      sha256  "e720391e4a136cd3588c9448bd19d2e9634817c6e6f87ec894fcfb826378a542"
+      sha256  "21a0c2cd7437627214c40d4b55ccfa0e5300e16a3b541c61c09871c553743714"
     end
     on_arm do
       url     "https://github.com/0xJacky/nginx-ui/releases/download/v#{version}/nginx-ui-macos-arm64-v8a.tar.gz"
-      sha256  "88607aee8c4187eee67f28c65941005f039aa982d1e3707c68d24ca13386247f"
+      sha256  "31c0b0868750056a6e96640b99aca8dde13e609ec4b00c232058126d94f86814"
     end
   end
 
   on_linux do
     on_intel do
       url     "https://github.com/0xJacky/nginx-ui/releases/download/v#{version}/nginx-ui-linux-64.tar.gz"
-      sha256  "1c132bc7dc748dc8471c790aaaa89d55a52dd747648fd6ebe466b657ca883398"
+      sha256  "72edc77ff39735b7b738047727ec14b384756c4a3b6c69e5c60e589974f778b3"
     end
     on_arm do
       url     "https://github.com/0xJacky/nginx-ui/releases/download/v#{version}/nginx-ui-linux-arm64-v8a.tar.gz"
-      sha256  "5fe8f4a84de00d8fc6c22de1d5cadd026069ec055b84caf96e0ee6276aeca95d"
+      sha256  "0a595234baed5350c0adf02a716814166e8ca2eecce36b78ab8dedab19a5bf87"
     end
   end
 
@@ -65,6 +65,8 @@ class NginxUi < Formula
     run [opt_bin/"nginx-ui", "serve", "--config", etc/"nginx-ui/app.ini"]
     keep_alive true
     working_dir var/"nginx-ui"
+    log_path var/"log/nginx-ui.log"
+    error_log_path var/"log/nginx-ui.err.log"
   end
 
   test do
