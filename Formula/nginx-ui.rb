@@ -67,6 +67,7 @@ class NginxUi < Formula
     working_dir var/"nginx-ui"
     log_path var/"log/nginx-ui.log"
     error_log_path var/"log/nginx-ui.err.log"
+    environment_variables PATH: std_service_path_env
   end
 
   test do
