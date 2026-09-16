@@ -5,23 +5,23 @@ class NginxUi < Formula
 
   on_macos do
     on_intel do
-      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.5.10/nginx-ui-macos-64.tar.gz"
-      sha256  "ee6e4becdb69f46e1d67dbbb0a3ddbd7d9c2acb6316db654af5ca92d204d5278"
+      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.6.1/nginx-ui-macos-64.tar.gz"
+      sha256  "c283e634a8681e95d3c27176f3e48360cf3fc29274af047994d6aa6097e81a8c"
     end
     on_arm do
-      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.5.10/nginx-ui-macos-arm64-v8a.tar.gz"
-      sha256  "ce73bb328646b7c017a78537f4c05fc1179de70cd5ccfa22329b05091e851739"
+      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.6.1/nginx-ui-macos-arm64-v8a.tar.gz"
+      sha256  "333d9ee3854cea4cce5a1e24fb923f61e1c67f4006a2b1bfecc365f09347285d"
     end
   end
 
   on_linux do
     on_intel do
-      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.5.10/nginx-ui-linux-64.tar.gz"
-      sha256  "f82aa9e1765d9abf8c9b7c95965f26a9ab96677787933087dc50c985d7fbcae9"
+      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.6.1/nginx-ui-linux-64.tar.gz"
+      sha256  "8e54b3100ffaf33be51fae68864ea2932c5d7413ce6193ee6960b89b91eb607c"
     end
     on_arm do
-      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.5.10/nginx-ui-linux-arm64-v8a.tar.gz"
-      sha256  "89e703c282fed169398240511b6137252113fb4ef28e598df4cdefe7a0c3ce3f"
+      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.6.1/nginx-ui-linux-arm64-v8a.tar.gz"
+      sha256  "2b51856c6eba8a9b0dc2318bae34fe16f4e34f585df0ee017b6df42ec645e1d2"
     end
   end
 
@@ -55,9 +55,9 @@ class NginxUi < Formula
     (var/"nginx-ui").mkpath
   end
 
-  def post_install
+  post_install_steps do
     # Ensure correct permissions
-    (var/"nginx-ui").chmod 0755
+    set_permissions "nginx-ui", "0755", base: :var, recursive: false
   end
 
   service do
