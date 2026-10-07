@@ -5,23 +5,23 @@ class NginxUi < Formula
 
   on_macos do
     on_intel do
-      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.8.2/nginx-ui-macos-64.tar.gz"
-      sha256  "106c791cad843a43a31cb5856903274d769d5a61c06262d1031aa48196a01135"
+      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.8.4/nginx-ui-macos-64.tar.gz"
+      sha256  "749dbd79e9c2217192411e09216860cb45ff32bc9cfdb152d05592be5da7305a"
     end
     on_arm do
-      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.8.2/nginx-ui-macos-arm64-v8a.tar.gz"
-      sha256  "fc40c47935afbd78d4a7cd7002949722b15d9308e68e33e373f992bf247e3ade"
+      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.8.4/nginx-ui-macos-arm64-v8a.tar.gz"
+      sha256  "f0dcdc1a8e8ae78fc48ea2f5b529eeccb616c8616dad6770f0decd0eb01b8cc3"
     end
   end
 
   on_linux do
     on_intel do
-      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.8.2/nginx-ui-linux-64.tar.gz"
-      sha256  "a11786d6bd25f23071939bccae21ee91c1e43b89f4d7bb9222c5666483f5114f"
+      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.8.4/nginx-ui-linux-64.tar.gz"
+      sha256  "34bc625f9710ba14fe52932f9a477c48c480cda46bb94acd57676d0c7c644d94"
     end
     on_arm do
-      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.8.2/nginx-ui-linux-arm64-v8a.tar.gz"
-      sha256  "cc78be2854abb509899c6f3d2a3f1717767a275e6b89a6c10c61b60cf898c317"
+      url     "https://github.com/0xJacky/nginx-ui/releases/download/v2.8.4/nginx-ui-linux-arm64-v8a.tar.gz"
+      sha256  "531c59d4fcac6a1738fee9bb28abf1865c01a961c042ab14c7550fc09e47d665"
     end
   end
 
