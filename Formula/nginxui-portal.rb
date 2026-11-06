@@ -2,18 +2,32 @@
 class NginxuiPortal < Formula
   desc "Command-line tool for the Nginx UI plugin Developer Center"
   homepage "https://portal.nginxui.com/account/cli"
-  url "https://portal.nginxui.com/cli/nginxui-portal-0.1.0.mjs"
-  sha256 "cd5d7ed8bbd159bddb64d00b43898c0590b9004d4c70e22fe34523cb62147a4a"
   license "AGPL-3.0-only"
 
-  depends_on "node"
+  on_macos do
+    on_intel do
+      url "https://portal-cli.nginxui.com/nginxui-portal/0.2.0/nginxui-portal_0.2.0_darwin_amd64.tar.gz"
+      sha256 "5e59743cafe217dec08c9c9c32669410e9011f7d977fd20376209acc38e1f04c"
+    end
+    on_arm do
+      url "https://portal-cli.nginxui.com/nginxui-portal/0.2.0/nginxui-portal_0.2.0_darwin_arm64.tar.gz"
+      sha256 "19b1c44005c482f862c0bfe07dd3652cc02e4ad8eb37ff546255cc4e629255cf"
+    end
+  end
+
+  on_linux do
+    on_intel do
+      url "https://portal-cli.nginxui.com/nginxui-portal/0.2.0/nginxui-portal_0.2.0_linux_amd64.tar.gz"
+      sha256 "b31ec573b03b0851c5ae9d2eee4f75abba06cba23f27c31fe0ad5db8489b7849"
+    end
+    on_arm do
+      url "https://portal-cli.nginxui.com/nginxui-portal/0.2.0/nginxui-portal_0.2.0_linux_arm64.tar.gz"
+      sha256 "3413fa994faa7fab04fd3b69eca0f07257f50eccda12a45521bd3feb87158bde"
+    end
+  end
 
   def install
-    libexec.install "nginxui-portal-0.1.0.mjs" => "nginxui-portal.mjs"
-    (bin/"nginxui-portal").write <<~EOS
-      #!/bin/sh
-      exec "#{formula_opt_bin("node")}/node" "#{libexec}/nginxui-portal.mjs" "$@"
-    EOS
+    bin.install "nginxui-portal"
   end
 
   test do
