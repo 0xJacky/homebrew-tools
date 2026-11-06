@@ -2,6 +2,7 @@
 class NginxuiPortal < Formula
   desc "Command-line tool for the Nginx UI plugin Developer Center"
   homepage "https://portal.nginxui.com/account/cli"
+  version "0.2.0"
   license "AGPL-3.0-only"
 
   on_macos do
