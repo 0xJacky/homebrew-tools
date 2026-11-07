@@ -3,6 +3,12 @@ class NginxUi < Formula
   homepage "https://github.com/0xJacky/nginx-ui"
   license  "AGPL-3.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/0xjacky/tools"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "2dcc2c19bfd1380eca9327a004cfaa4e432deeb93138c9f60680998cee3c3e76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "031ce432dd2c91c0e039dee92d82d1b3a58a2a73e14061d055229bee2d0a9c06"
+  end
+
   on_macos do
     on_intel do
       url     "https://github.com/0xJacky/nginx-ui/releases/download/v3.0.0/nginx-ui-macos-64.tar.gz"
